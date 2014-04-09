@@ -15,7 +15,7 @@ ng.module('ngDropkickApp', [
 	'module.controllers',
 	'module.directives',
 	'module.filters',
-	'ng-dropkick'
+	'uiDropkick'
 
 ])
 

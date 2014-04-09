@@ -15,4 +15,4 @@ ng.module('module.directives', []);
 
 ng.module('module.filters', []);
 
-ng.module('ngDropkickApp', ['module.services', 'module.controllers', 'module.directives', 'module.filters', 'ng-dropkick']);
+ng.module('ngDropkickApp', ['module.services', 'module.controllers', 'module.directives', 'module.filters', 'uiDropkick']);

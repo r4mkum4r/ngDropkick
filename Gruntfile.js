@@ -32,7 +32,9 @@ module.exports = function (grunt) {
         tasks: ['bowerInstall']
       },
       scripts:{
-        files: ['app/scripts/**/*.js'],
+        files: [
+          'app/scripts/**/*.js'
+        ],
         tasks: ['dist']
       },
       js: {
@@ -334,8 +336,11 @@ module.exports = function (grunt) {
     concat: {
       js:{
         src : [
-          'app/scripts/module/module.js',
-          'app/scripts/**/*.js'
+          'app/scripts/*.js',
+          'app/scripts/module/*.js',
+          'app/scripts/module/**/*.js',
+          'app/scripts/ngDropkick/*.js',
+          'app/scripts/ngDropkick/**/*.js'
         ],
         dest: 'app/dist/scripts/app.js'
       },
