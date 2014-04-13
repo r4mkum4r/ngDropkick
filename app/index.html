@@ -23,11 +23,17 @@
     <![endif]-->
     <div id="main" ng-controller='mainCtrl'>
         <select name="dropkick" id="dropkick" ng-dropkick>
+            <option ng-repeat="item in data" value="{{item}}">{{item}}</option>
         </select>
     </div>
 
     <script src='dist/scripts/vendors.min.js'></script>
-    <script src='dist/scripts/app.min.js'></script>
+    <script src='dist/scripts/app.js'></script>
+    <script>
+
+        
+
+    </script>
 
 </body>
 </html>

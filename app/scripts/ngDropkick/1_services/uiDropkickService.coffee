@@ -1,12 +1,11 @@
-ng.module 'uiDropkick.services'
+ng.module('uiDropkick.services')
 	.factory 'dropkick', ->
 		class Model
 
+			self = @
+
 			init : (params) ->
-
-
-			getSettings : ->
-
+				self.modelSettings = ng.extend(getBaseSettings(), params)
 
 			getParams : ->
 
@@ -14,8 +13,11 @@ ng.module 'uiDropkick.services'
 			getTheme : ->
 
 
-			setTheme : =>
+			setTheme : ->
 
+
+			setScope : (scope)->
+				self.modelSettings.$scope = scope
 
 			reset : ->
 
@@ -25,42 +27,20 @@ ng.module 'uiDropkick.services'
 			###
 				PRIVATE METHODS
 			###
-			@build = ->
-				dropdown = ''
-
-				dropdown
-
-			getDropdownTemplate = ->
-				dropdownTemplate = [
-					'<div class="dk_container" id="dk_container_{{ id }}" tabindex="{{ tabindex }}">',
-					'<a class="dk_toggle">',
-					'<span class="dk_label">{{ label }}</span>',
-					'</a>',
-					'<div class="dk_options">',
-					'<ul class="dk_options_inner">',
-					'</ul>',
-					'</div>',
-					'</div>'
-				].join('')
-
-				dropdownTemplate
-
-			getOptionTemplate = ->
-				optionTemplate = '<li class="{{ current }} {{ class}}"><a data-dk-dropdown-value="{{ value }}">{{ text }}</a></li>'
-
-				optionTemplate
-
-
-			getDefaults = ->
+			getBaseSettings = ->
 				
 				defaults = {
-					startSpeed : 1000, 
-					theme  : false,
-					change : false,
+					startSpeed : 1000 
+					theme  : false
+					change : false
+					reload : false
 					data : []
+					$scope : null
 				}
 
 				defaults
+
+			@modelSettings = {}
 
 			validData = (data) ->
 
