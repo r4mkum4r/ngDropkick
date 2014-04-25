@@ -77,3 +77,9 @@ body {
     border-bottom: 0;
   }
 }
+
+.hideSelect{
+  position: absolute;
+  /*top: 999em;*/
+  /*display: none;*/
+}

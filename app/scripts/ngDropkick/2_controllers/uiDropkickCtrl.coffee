@@ -1,7 +1,6 @@
 ng.module('uiDropkick.controllers')
 	.controller('dropkickCtrl', ['$scope', 'dropkick', ($scope, model)->
 
-		$scope.data = [1..10]
 		model.setScope($scope)
 
 		class DropkickCtrl
@@ -24,13 +23,6 @@ ng.module('uiDropkick.controllers')
 				optionTemplate = '<li class="{{ current }} {{ class}}"><a data-dk-dropdown-value="{{ value }}">{{ text }}</a></li>'
 
 				optionTemplate
-
-			setData : ->
-				$scope.data = model.getData()
-
-			getData : ->
-
-				$scope.data
 
 			build : ->
 				dropkick = ''

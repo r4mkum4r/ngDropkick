@@ -7,19 +7,10 @@ ng.module('uiDropkick.services')
 			init : (params) ->
 				self.modelSettings = ng.extend(getBaseSettings(), params)
 
-			getParams : ->
-
-
-			getTheme : ->
-
-
-			setTheme : ->
-
-
 			setScope : (scope)->
 				self.modelSettings.$scope = scope
 
-			reset : ->
+			
 
 
 

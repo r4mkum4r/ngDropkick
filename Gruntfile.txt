@@ -326,40 +326,25 @@ module.exports = function (grunt) {
     //   }
     // },
     uglify: {
-        js:{
-          src: [
-            'app/dist/scripts/app.js'
-          ],
-          dest: 'app/dist/scripts/app.min.js'
-        }
-      // vendor:{
-      //   js:{
-      //     src: [
-      //       'app/dist/scripts/vendor.js'
-      //     ],
-      //     dest: 'app/dist/scripts/vendor.min.js'
-      //   }
-      // }
+      js:{
+        src: [
+          'app/dist/scripts/app.js'
+        ],
+        dest: 'app/dist/scripts/app.min.js'
+      }
     },
     concat: {
-        js:{
-          src : [
-            'app/scripts/*.js',
-            'app/scripts/module/*.js',
-            'app/scripts/module/**/*.js',
-            'app/scripts/ngDropkick/*.js',
-            'app/scripts/ngDropkick/**/*.js'
-          ],
-          dest: 'app/dist/scripts/app.js'
-        }
-      // vendor:{
-      //   js:{
-      //     src : [
-      //       'app/bower_components/angular/angular.min.js'
-      //     ],
-      //     dest: 'app/dist/scripts/vendor.js'
-      //   }
-      // }
+      js:{
+        src : [
+          'app/scripts/*.js',
+          'app/scripts/module/*.js',
+          'app/scripts/module/**/*.js',
+          'app/scripts/ngDropkick/*.js',
+          'app/scripts/ngDropkick/**/*.js'
+        ],
+        dest: 'app/dist/scripts/app.js'
+      },
+      dist: {}
     },
 
     // Test settings
@@ -367,29 +352,6 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
-      }
-    },
-
-    distribution:{
-      concat:{
-        js:{
-          src : [
-            'app/scripts/*.js',
-            'app/scripts/module/*.js',
-            'app/scripts/module/**/*.js',
-            'app/scripts/ngDropkick/*.js',
-            'app/scripts/ngDropkick/**/*.js'
-          ],
-          dest: 'app/dist/scripts/app.js'
-        }
-      // vendor:{
-      //   js:{
-      //     src : [
-      //       'app/bower_components/angular/angular.min.js'
-      //     ],
-      //     dest: 'app/dist/scripts/vendor.js'
-      //   }
-      // }
       }
     }
   });
@@ -446,22 +408,8 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask('dist:app', [
-    'concat:app',
-    'uglify:app'
-  ]);
-
-  grunt.registerTask('dist:vendor', [
-    'concat:vendor',
-    'uglify:vendor'
-  ]);
-
   grunt.registerTask('dist', [
     'concat',
     'uglify'
   ]);
-
-  grunt.registerTask('testing', function(){
-    grunt.task.run('concat');
-  });
 };
